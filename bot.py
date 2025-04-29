@@ -9,12 +9,12 @@ load_dotenv()
 bot = Bot(token=os.getenv('BOT_TOKEN'))
 dp = Dispatcher(bot)
 
-PRICE = LabeledPrice(label="Доступ к каналу", amount=100*100)  # 100 RUB в копейках
+PRICE = LabeledPrice(label="Доступ к каналу", amount=500*100)  # 500 RUB в копейках
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     await message.answer(
-        "🎟️ Купите доступ к приватному каналу за 100 ₽",
+        "🎟️ Купите доступ к приватному каналу за 500 ₽",
         reply_markup=types.InlineKeyboardMarkup().add(
             types.InlineKeyboardButton("💰 Оплатить", pay=True)
         )
